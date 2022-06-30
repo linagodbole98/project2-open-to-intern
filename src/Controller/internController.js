@@ -4,7 +4,7 @@ const validator = require("../validator/validate")
 
 
 
-// create intern
+//---------------------------------------------[ create intern]---------------------------------------------------------
 
 const CreateIntern = async function (req, res) {
     try {
@@ -31,7 +31,7 @@ const CreateIntern = async function (req, res) {
         if (!data.collegeName) return res.status(400).send({ status: false, message: "collegeName is required" });
         const validateId = await CollegeModel.findOne({ name: data.collegeName })
         if (!validateId) return res.status(400).send({ status: false, msg: "college is not valid or not exist" })
-        //--------------------------
+        //----------------------------------
         req.body.collegeId = validateId._id
         await internModel.create(data)
         let obj = {

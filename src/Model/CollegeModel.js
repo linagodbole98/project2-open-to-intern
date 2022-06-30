@@ -1,8 +1,5 @@
 const mongoose = require('mongoose');
 // var validator = require("email-validator");
-
-
-
 const collegeSchema = new mongoose.Schema({
    name: {
     type: String,
@@ -15,20 +12,14 @@ const collegeSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-
   logoLink: {
     type: String,
     required: true,
-  
   },
-  
   isDeleted:{
     type:Boolean,
     default:false,
-
   }
- 
-
 }, { timestamps: true });
 
 module.exports = mongoose.model("Colleges", collegeSchema)

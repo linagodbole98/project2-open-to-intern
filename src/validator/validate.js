@@ -15,7 +15,6 @@ const isValid = function (value) {
     if (typeof (value) === "string" && value.trim().length == 0) return false
     return true;
 }
-
 // url
 const isUrl = function (value) {
     if (/(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/.test(value)) { return true }
